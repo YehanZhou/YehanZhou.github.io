@@ -28,7 +28,7 @@
 添加所有文件到暂存区git add .">
 <meta property="og:type" content="article">
 <meta property="og:title" content="将本地仓库提交到github上">
-<meta property="og:url" content="http://yoursite.com/2016/09/19/git-command/index.html">
+<meta property="og:url" content="https://yehanzhou.github.io/2016/09/19/git-command/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="先在github上新建一个仓库,取名,例test
 
@@ -198,9 +198,9 @@
                     <nav class="header-nav">
                         <ul class="social">
                             
-                                <a class="fa Email" href="mailto:123@123.com" title="Email"></a>
+                                <a class="fa Email" href="mailto:yehan@126.com" title="Email"></a>
                             
-                                <a class="fa GitHub" href="#" title="GitHub"></a>
+                                <a class="fa GitHub" href="https://github.com/YehanZhou" title="GitHub"></a>
                             
                                 <a class="fa RSS" href="/atom.xml" title="RSS"></a>
                             
@@ -274,9 +274,9 @@
             <nav class="header-nav">
                         <ul class="social">
                             
-                                <a class="fa Email" target="_blank" href="mailto:123@123.com" title="Email"></a>
+                                <a class="fa Email" target="_blank" href="mailto:yehan@126.com" title="Email"></a>
                             
-                                <a class="fa GitHub" target="_blank" href="#" title="GitHub"></a>
+                                <a class="fa GitHub" target="_blank" href="https://github.com/YehanZhou" title="GitHub"></a>
                             
                                 <a class="fa RSS" target="_blank" href="/atom.xml" title="RSS"></a>
                             
@@ -357,8 +357,8 @@
         <p><span>发布时间:</span>2016-09-19, 10:32:10</p>
         <p><span>最后更新:</span>2016-09-19, 16:43:22</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2016/09/19/git-command/" title="将本地仓库提交到github上">http://yoursite.com/2016/09/19/git-command/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/09/19/git-command/　　作者: Emily Chou" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2016/09/19/git-command/" title="将本地仓库提交到github上">https://yehanzhou.github.io/2016/09/19/git-command/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://yehanzhou.github.io/2016/09/19/git-command/　　作者: Emily Chou" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -437,9 +437,9 @@
     
       <div class="duoshuo" id="comments">
     <div id="comment-box" ></div>
-    <div class="ds-thread" id="ds-thread" data-thread-key="2016/09/19/git-command/" data-title="将本地仓库提交到github上" data-url="http://yoursite.com/2016/09/19/git-command/"></div>
+    <div class="ds-thread" id="ds-thread" data-thread-key="2016/09/19/git-command/" data-title="将本地仓库提交到github上" data-url="https://yehanzhou.github.io/2016/09/19/git-command/"></div>
     <script>
-        var duoshuoQuery = {short_name:"http://yehanzhou.duoshuo.com"};
+        var duoshuoQuery = {short_name:"yehanzhou"};
         var loadComment = function(){
             var d = document, s = d.createElement('script');
             s.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
@@ -448,9 +448,46 @@
         }
 
         
+            // Add comment count
+            $(function(){ 
+                var jsonUrl = "http://api.duoshuo.com/threads/counts.jsonp?short_name=yehanzhou&threads=2016/09/19/git-command/&callback=?";
+                $.getJSON(jsonUrl, function(result){
+                    $.each(result.response, function(i, field){
+                        var value = field.comments;
+                        if (value > 0) {
+                            $(".count-comment").text(value);
+                            return;
+                        }
+                    })
+                })
+            })
+        
     </script>
     
-    <script> loadComment(); </script>
+    <aside class="comment-bar">
+        <a href="javascript:void(0);">
+            <i class="fa fa-commenting-o animated infinite pulse"></i>
+            <i class="fa fa-spinner fa-pulse"></i>
+            <span class="count-comment"></span>
+        </a>
+    </aside>
+    <script>
+        var $commentBar = $("#comments aside.comment-bar");
+        var load$hide = function(){
+            $commentBar.find("a > i").toggle();
+            loadComment();
+            $commentBar.fadeOut(800);
+        }
+        $commentBar.click(function(){
+            load$hide();
+        })
+        $commentBar.children("a").hover(function(){
+            load$hide();
+        })
+        if (window.location.hash === "#comments") {
+            load$hide();
+        }
+    </script>
 
 </div>
     

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Hexo</title>
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://yehanzhou.github.io/"/>
+  <updated>2016-09-19T08:43:22.000Z</updated>
+  <id>https://yehanzhou.github.io/</id>
+  
+  <author>
+    <name>Emily Chou</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>将本地仓库提交到github上</title>
+    <link href="https://yehanzhou.github.io/2016/09/19/git-command/"/>
+    <id>https://yehanzhou.github.io/2016/09/19/git-command/</id>
+    <published>2016-09-19T02:32:10.000Z</published>
+    <updated>2016-09-19T08:43:22.000Z</updated>
+    
+    <content type="html"><![CDATA[<ol>
+<li><p>先在github上新建一个仓库,取名,例test</p>
+</li>
+<li><p>本地新建文件夹</p>
+</li>
+<li><p>打开命令行工具cd进这个文件夹</p>
+</li>
+<li><p>执行<code>git init</code>,执行后会在该文件夹下生成一个名为.git的文件夹,里面有有关git的配置</p>
+</li>
+<li><p>关联到远程仓库<br><code>git remote add origin https://YehanZhou@github.com/YehanZhou/test.git</code></p>
+</li>
+<li><p>添加所有文件到暂存区<br><code>git add .</code></p>
+</li>
+<li><p>提交<br><code>git commit -m &quot;description&quot;</code></p>
+</li>
+<li><p>推送<br><code>git push -u origin master</code></p>
+</li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;ol&gt;
+&lt;li&gt;&lt;p&gt;先在github上新建一个仓库,取名,例test&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;本地新建文件夹&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;打开命令行工具cd进这个文件夹&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;执行&lt;code&gt;git init&lt;/code&gt;,执行后会
+    
+    </summary>
+    
+    
+      <category term="git" scheme="https://yehanzhou.github.io/tags/git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>hexo命令</title>
+    <link href="https://yehanzhou.github.io/2016/09/18/hello-world/"/>
+    <id>https://yehanzhou.github.io/2016/09/18/hello-world/</id>
+    <published>2016-09-18T02:32:10.000Z</published>
+    <updated>2016-09-19T08:44:36.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+    
+    </summary>
+    
+    
+      <category term="hexo" scheme="https://yehanzhou.github.io/tags/hexo/"/>
+    
+  </entry>
+  
+</feed>
