@@ -1523,9 +1523,6 @@ color
 .article-entry h3:hover a {
   text-decoration: underline;
 }
-.article-entry h3::after {
-  content: " >";
-}
 .article-entry h4,
 .article-entry h5,
 .article-entry h6 {
