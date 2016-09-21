@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yehanzhou.github.io/"/>
-  <updated>2016-09-19T08:43:22.000Z</updated>
+  <updated>2016-09-21T02:32:26.000Z</updated>
   <id>https://yehanzhou.github.io/</id>
   
   <author>
@@ -14,6 +14,37 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>JS中Math.random()的使用和扩展</title>
+    <link href="https://yehanzhou.github.io/2016/09/21/js-random/"/>
+    <id>https://yehanzhou.github.io/2016/09/21/js-random/</id>
+    <published>2016-09-21T02:31:41.000Z</published>
+    <updated>2016-09-21T02:32:26.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>Math.random()方法返回大于等于 0 小于 1 的一个随机数。对于某些站点来说，这个方法非常实用，因为可以利用它来随机显示一些名人名言和新闻事件。</p>
+<p>###1. 在连续整数中取得一个随机数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">值 = Math.floor(Math.random() * 可能值的总数 + 第一个可能的值)</div></pre></td></tr></table></figure></p>
+<p>例：产生1-10的随机数<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> rand1 = <span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random() * <span class="number">10</span> + <span class="number">1</span>);</div></pre></td></tr></table></figure></p>
+<p>编写产生startNumber至endNumber随机数的函数<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">selectFrom</span>(<span class="params">startNumber, endNumber</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> choice = endNumber - startNumber + <span class="number">1</span>;</div><div class="line">    <span class="keyword">return</span> <span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random() * choice + startNumber)</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> rand2 = selectFrom(<span class="number">2</span>,<span class="number">8</span>);<span class="comment">//产生2至8的随机数</span></div></pre></td></tr></table></figure></p>
+<p>###2. 在不相邻整数中取得一个随机数</p>
+<p>####2.1 在不相邻的两个整数中取得一个随机数<br>例：随机产生2或4中的一个数<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> rand3 = <span class="built_in">Math</span>.random() &lt; <span class="number">0.5</span> ? <span class="number">2</span> : <span class="number">4</span>;</div></pre></td></tr></table></figure></p>
+<p>####2.2 在不相邻的多个整数中产生一个随机数<br>结合函数参数数组，可编写在不相邻的多个整数中产生一个随机值的函数<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">selectFromMess</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="built_in">arguments</span>[<span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random() * <span class="built_in">arguments</span>.length)]</div><div class="line">&#125;</div><div class="line"><span class="comment">//随机产生1、6、8中的一个数</span></div><div class="line"><span class="keyword">var</span> rand4 = selectFromMess(<span class="number">1</span>, <span class="number">6</span>, <span class="number">8</span>);</div><div class="line"></div><div class="line"><span class="comment">//也可随机产生文本</span></div><div class="line"><span class="keyword">var</span> randomTxt1 = selectFromMess(<span class="string">"安慰奖"</span>, <span class="string">"二等奖"</span>, <span class="string">"一等奖"</span>);</div></pre></td></tr></table></figure></p>
+<p>每次要输入这么多参数比较麻烦，可以改写一下函数<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">selectFromMessArray</span>(<span class="params">arr</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> arr[<span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random() * arr.length)]</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> arrayTxt=[<span class="string">"一"</span>,<span class="string">"二"</span>,<span class="string">"三"</span>,<span class="string">"四"</span>,<span class="string">"五"</span>];</div><div class="line"><span class="keyword">var</span> randTxt2 = selectFromMessArray(arrayTxt);</div></pre></td></tr></table></figure></p>
+<p>或者不改变原有方法，可以利用apply()这个方法传递数组参数<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> randTxt3 = selectFromMess.apply(<span class="literal">null</span>,arrayTxt);</div></pre></td></tr></table></figure></p>
+<p>关于apply方法的使用可以<a href="http://www.cnblogs.com/delin/archive/2010/06/17/1759695.html" target="_blank" rel="external">看这里</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Math.random()方法返回大于等于 0 小于 1 的一个随机数。对于某些站点来说，这个方法非常实用，因为可以利用它来随机显示一些名人名言和新闻事件。&lt;/p&gt;
+&lt;p&gt;###1. 在连续整数中取得一个随机数&lt;br&gt;&lt;figure class=&quot;highlight pla
+    
+    </summary>
+    
+    
+      <category term="js" scheme="https://yehanzhou.github.io/tags/js/"/>
+    
+  </entry>
   
   <entry>
     <title>将本地仓库提交到github上</title>
