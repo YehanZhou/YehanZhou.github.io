@@ -139,13 +139,13 @@
                 <div class="tips-box hide">
                     <div class="tips-arrow"></div>
                     <ul class="tips-inner">
-                        <li>菜单</li>
-                        <li>标签</li>
+                        <li>Menu</li>
+                        <li>Tags</li>
                         
-                        <li>友情链接</li>
+                        <li>Friends</li>
                         
                         
-                        <li>关于我</li>
+                        <li>About Me</li>
                         
                     </ul>
                 </div>
@@ -249,7 +249,7 @@
             </nav>
         </header>                
     </div>
-    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+    <link class="menu-list" tags="Tags" friends="Friends" about="About Me"/>
 </nav>
       <div class="body-wrap">
   
@@ -283,12 +283,11 @@
       
           
         <p>Math.random()方法返回大于等于 0 小于 1 的一个随机数。对于某些站点来说，这个方法非常实用，因为可以利用它来随机显示一些名人名言和新闻事件。</p>
-<p>###1. 在连续整数中取得一个随机数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">值 = Math.floor(Math.random() * 可能值的总数 + 第一个可能的值)</div></pre></td></tr></table></figure></p>
+<h2 id="在连续整数中取得一个随机数"><a href="#在连续整数中取得一个随机数" class="headerlink" title="在连续整数中取得一个随机数"></a>在连续整数中取得一个随机数</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">值 = Math.floor(Math.random() * 可能值的总数 + 第一个可能的值)</div></pre></td></tr></table></figure>
 <p>例：产生1-10的随机数<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> rand1 = <span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random() * <span class="number">10</span> + <span class="number">1</span>);</div></pre></td></tr></table></figure></p>
 <p>编写产生startNumber至endNumber随机数的函数<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">selectFrom</span>(<span class="params">startNumber, endNumber</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> choice = endNumber - startNumber + <span class="number">1</span>;</div><div class="line">    <span class="keyword">return</span> <span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random() * choice + startNumber)</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> rand2 = selectFrom(<span class="number">2</span>,<span class="number">8</span>);<span class="comment">//产生2至8的随机数</span></div></pre></td></tr></table></figure></p>
-<p>###2. 在不相邻整数中取得一个随机数</p>
-<p>####2.1 在不相邻的两个整数中取得一个随机数<br>例：随机产生2或4中的一个数<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> rand3 = <span class="built_in">Math</span>.random() &lt; <span class="number">0.5</span> ? <span class="number">2</span> : <span class="number">4</span>;</div></pre></td></tr></table></figure></p>
-<p>####2.2 在不相邻的多个整数中产生一个随机数<br>结合函数参数数组，可编写在不相邻的多个整数中产生一个随机值的函数<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">selectFromMess</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="built_in">arguments</span>[<span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random() * <span class="built_in">arguments</span>.length)]</div><div class="line">&#125;</div><div class="line"><span class="comment">//随机产生1、6、8中的一个数</span></div><div class="line"><span class="keyword">var</span> rand4 = selectFromMess(<span class="number">1</span>, <span class="number">6</span>, <span class="number">8</span>);</div><div class="line"></div><div class="line"><span class="comment">//也可随机产生文本</span></div><div class="line"><span class="keyword">var</span> randomTxt1 = selectFromMess(<span class="string">"安慰奖"</span>, <span class="string">"二等奖"</span>, <span class="string">"一等奖"</span>);</div></pre></td></tr></table></figure></p>
+<h2 id="在不相邻整数中取得一个随机数"><a href="#在不相邻整数中取得一个随机数" class="headerlink" title="在不相邻整数中取得一个随机数"></a>在不相邻整数中取得一个随机数</h2><h3 id="在不相邻的两个整数中取得一个随机数"><a href="#在不相邻的两个整数中取得一个随机数" class="headerlink" title="在不相邻的两个整数中取得一个随机数"></a>在不相邻的两个整数中取得一个随机数</h3><p>例：随机产生2或4中的一个数<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> rand3 = <span class="built_in">Math</span>.random() &lt; <span class="number">0.5</span> ? <span class="number">2</span> : <span class="number">4</span>;</div></pre></td></tr></table></figure></p>
+<h3 id="在不相邻的多个整数中产生一个随机数"><a href="#在不相邻的多个整数中产生一个随机数" class="headerlink" title="在不相邻的多个整数中产生一个随机数"></a>在不相邻的多个整数中产生一个随机数</h3><p>结合函数参数数组，可编写在不相邻的多个整数中产生一个随机值的函数<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">selectFromMess</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="built_in">arguments</span>[<span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random() * <span class="built_in">arguments</span>.length)]</div><div class="line">&#125;</div><div class="line"><span class="comment">//随机产生1、6、8中的一个数</span></div><div class="line"><span class="keyword">var</span> rand4 = selectFromMess(<span class="number">1</span>, <span class="number">6</span>, <span class="number">8</span>);</div><div class="line"></div><div class="line"><span class="comment">//也可随机产生文本</span></div><div class="line"><span class="keyword">var</span> randomTxt1 = selectFromMess(<span class="string">"安慰奖"</span>, <span class="string">"二等奖"</span>, <span class="string">"一等奖"</span>);</div></pre></td></tr></table></figure></p>
 <p>每次要输入这么多参数比较麻烦，可以改写一下函数<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">selectFromMessArray</span>(<span class="params">arr</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> arr[<span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random() * arr.length)]</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> arrayTxt=[<span class="string">"一"</span>,<span class="string">"二"</span>,<span class="string">"三"</span>,<span class="string">"四"</span>,<span class="string">"五"</span>];</div><div class="line"><span class="keyword">var</span> randTxt2 = selectFromMessArray(arrayTxt);</div></pre></td></tr></table></figure></p>
 <p>或者不改变原有方法，可以利用apply()这个方法传递数组参数<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> randTxt3 = selectFromMess.apply(<span class="literal">null</span>,arrayTxt);</div></pre></td></tr></table></figure></p>
 <p>关于apply方法的使用可以<a href="http://www.cnblogs.com/delin/archive/2010/06/17/1759695.html" target="_blank" rel="external">看这里</a></p>
@@ -477,14 +476,14 @@
                 2016 Emily Chou
             </div>
             <div class="footer-right">
-                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+                <a href="http://hexo.io/" target="_blank" title="A fast, simple &amp; powerful blog framework">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="Another simple and elegant theme for Hexo  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
             </div>
         </div>
         
             <div class="visit">
                 
                     <span id="busuanzi_container_site_pv" style='display:none'>
-                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        <span id="site-visit" title="Site Visitors"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
                         </span>
                     </span>
                 
@@ -493,7 +492,7 @@
                 
                 
                     <span id="busuanzi_container_page_pv" style='display:none'>
-                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        <span id="page-visit"  title="Page Hits"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
                         </span>
                     </span>
                 
@@ -526,9 +525,9 @@
 
 
 <div class="scroll" id="scroll">
-    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
-    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
-    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+    <a href="#" title="Back to Top"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="Comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="Go to Bottom"><i class="fa fa-arrow-down"></i></a>
 </div>
 <script>
     // Open in New Window
