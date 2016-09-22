@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yehanzhou.github.io/"/>
-  <updated>2016-09-21T02:35:42.000Z</updated>
+  <updated>2016-09-22T08:00:05.000Z</updated>
   <id>https://yehanzhou.github.io/</id>
   
   <author>
@@ -16,11 +16,35 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>我想</title>
+    <link href="https://yehanzhou.github.io/2016/09/22/wanna-do/"/>
+    <id>https://yehanzhou.github.io/2016/09/22/wanna-do/</id>
+    <published>2016-09-22T07:34:31.000Z</published>
+    <updated>2016-09-22T08:00:05.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>我想上天呀~</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;我想上天呀~&lt;/p&gt;
+
+    
+    </summary>
+    
+      <category term="生活点滴" scheme="https://yehanzhou.github.io/categories/%E7%94%9F%E6%B4%BB%E7%82%B9%E6%BB%B4/"/>
+    
+    
+      <category term="随笔" scheme="https://yehanzhou.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+  </entry>
+  
+  <entry>
     <title>JS中Math.random()的使用和扩展</title>
     <link href="https://yehanzhou.github.io/2016/09/21/js-random/"/>
     <id>https://yehanzhou.github.io/2016/09/21/js-random/</id>
     <published>2016-09-21T02:31:41.000Z</published>
-    <updated>2016-09-21T02:35:42.000Z</updated>
+    <updated>2016-09-22T07:59:28.000Z</updated>
     
     <content type="html"><![CDATA[<p>Math.random()方法返回大于等于 0 小于 1 的一个随机数。对于某些站点来说，这个方法非常实用，因为可以利用它来随机显示一些名人名言和新闻事件。</p>
 <h2 id="在连续整数中取得一个随机数"><a href="#在连续整数中取得一个随机数" class="headerlink" title="在连续整数中取得一个随机数"></a>在连续整数中取得一个随机数</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">值 = Math.floor(Math.random() * 可能值的总数 + 第一个可能的值)</div></pre></td></tr></table></figure>
@@ -40,8 +64,10 @@
     
     </summary>
     
+      <category term="学习笔记" scheme="https://yehanzhou.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
-      <category term="js" scheme="https://yehanzhou.github.io/tags/js/"/>
+    
+      <category term="js基础" scheme="https://yehanzhou.github.io/tags/js%E5%9F%BA%E7%A1%80/"/>
     
   </entry>
   
@@ -95,7 +121,7 @@
     <link href="https://yehanzhou.github.io/2016/09/18/hello-world/"/>
     <id>https://yehanzhou.github.io/2016/09/18/hello-world/</id>
     <published>2016-09-18T02:32:10.000Z</published>
-    <updated>2016-09-19T08:44:36.000Z</updated>
+    <updated>2016-09-22T07:59:37.000Z</updated>
     
     <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
@@ -113,6 +139,8 @@
       &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
     
     </summary>
+    
+      <category term="学习笔记" scheme="https://yehanzhou.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
     
       <category term="hexo" scheme="https://yehanzhou.github.io/tags/hexo/"/>
