@@ -3,9 +3,16 @@
   
     
     <entry>
-      <title><![CDATA[es6-function]]></title>
-      <url>%2F2016%2F12%2F08%2Fes6-function%2F</url>
-      <content type="text"></content>
+      <title><![CDATA[从浏览器输入一个地址到渲染出网页的过程]]></title>
+      <url>%2F2017%2F06%2F14%2Fnet-process%2F</url>
+      <content type="text"><![CDATA[http://abc.com:80/z/c?i=1#bhttp协议 uri 端口号 路径 参数 片段 域名通过dns解析成ip 首先查询浏览器缓存 再查询系统缓存 再递归查询dns服务器 建立tcp链接，三次握手 syn-》 《- syn/ack ack -》 http报文生成 报文首部 请求行 PUT example.html HTTP1.1 请求首部字段：Accept等 报文体 包装报文，经过链路层（mac），传输层（tcp），网络层（ip），应用层（http） 服务器接收到HTTP请求 服务器接收到数据之后，会经过链路层，网络层，传输层逐层将该层对应的首部信息去掉 7． 服务器根据收到的HTTP数据，生成对应的响应报文,结构如下： 状态行：由HTTP 版本 状态码 原因短语构成 响应首部字段 通用首部字段 实体首部字段 都可以查手册得知其具体内容以及含义这里不再展开 客户端接收到了响应报文之后，浏览器渲染呈现 浏览器通常的主要组件分为以下几部分： 用户界面：如地址栏 书签菜单等等 浏览器引擎：在用户界面和呈现引擎之间传送之类 呈现引擎：负责显示请求的内容。例如HTMLhe CSS JAVAScript解释器：用于解释和执行JavaScript 代码 数据存储 渲染文档主要使用呈现引擎。过程如下： 呈现引擎从网络层获取请求文档的内容HTML文件，内容大小一般在8000个块以内。 引擎解析HTML文档 将各个标记转化为内容树上的DOM节点 ，同时解析CSS文件 样式数据 样式信息和 内容树共同构建成为 呈现树 呈现树构建完毕以后，进入布局阶段， 为每一个节点分配一个应该出现在屏幕上的确切坐标 呈现引擎遍历呈现树 由用户界面后端层将每个节点绘制出来。 参考链接1 参考链接2]]></content>
+    </entry>
+
+    
+    <entry>
+      <title><![CDATA[this的四种用法]]></title>
+      <url>%2F2017%2F06%2F14%2Fthis%2F</url>
+      <content type="text"><![CDATA[在函数执行时，this 总是指向调用该函数的对象。要判断 this 的指向，其实就是判断 this 所在的函数属于谁。在《javaScript语言精粹》这本书中，把 this出现的场景分为四类，简单的说就是：有对象就指向调用对象,没调用对象就指向全局对象,用new构造就指向新对象，通过 apply 或 call 或 bind 来改变 this 的所指。 1. 函数有所属对象时：指向所属对象函数有所属对象时，通常通过 . 表达式调用，这时 this自然指向所属对象。比如下面的例子：12345678var myObject = &#123;value: 100&#125;;myObject.getValue = function () &#123; console.log(this.value); // 输出 100 console.log(this);// 输出 &#123; value: 100, getValue: [Function] &#125;， // 其实就是 myObject 对象本身 return this.value;&#125;;console.log(myObject.getValue()); // =&gt; 100 getValue() 属于对象 myObject，并由 myOjbect 进行 . 调用，因此 this 指向对象 myObject。 2. 函数没有所属对象：指向全局对象12345678910var myObject = &#123;value: 100&#125;;myObject.getValue = function () &#123; var foo = function () &#123; console.log(this);// 输出全局对象 global console.log(this.value) // =&gt; undefined &#125;; foo(); return this.value;&#125;;console.log(myObject.getValue()); // =&gt; 100 在上述代码块中，foo 函数虽然定义在 getValue的函数体内，但实际上它既不属于 getValue 也不属于 myObject。foo 并没有被绑定在任何对象上，所以当调用时，它的 this 指针指向了全局对象 global。据说这是个设计错误。 3. 构造器中的 this：指向新对象js 中，我们通过 new 关键词来调用构造函数，此时 this会绑定在该新对象上。12345var SomeClass = function()&#123; this.value = 100;&#125;var myCreate = new SomeClass();console.log(myCreate.value); // 输出100 顺便说一句，在 js 中，构造函数、普通函数、对象方法、闭包，这四者没有明确界线。界线都在人的心中。 4. apply 和 call 调用以及 bind 绑定：指向绑定的对象 apply() 方法接受两个参数第一个是函数运行的作用域，另外一个是一个参数数组(arguments)。 call() 方法第一个参数的意义与apply()方法相同，只是其他的参数需要一个个列举出来。简单来说，call 的方式更接近我们平时调用函数，而 apply 需要我们传递 Array 形式的数组给它。它们是可以互相转换的。123456789var myObject = &#123;value: 100&#125;;var foo = function()&#123; console.log(this);&#125;;foo(); // 全局变量 globalfoo.apply(myObject); // &#123; value: 100 &#125;foo.call(myObject); // &#123; value: 100 &#125;var newFoo = foo.bind(myObject);newFoo(); // &#123; value: 100 &#125;]]></content>
     </entry>
 
     

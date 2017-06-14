@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yehanzhou.github.io/"/>
-  <updated>2016-12-08T02:23:20.000Z</updated>
+  <updated>2017-06-14T13:42:22.000Z</updated>
   <id>https://yehanzhou.github.io/</id>
   
   <author>
@@ -16,20 +16,114 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>es6-function</title>
-    <link href="https://yehanzhou.github.io/2016/12/08/es6-function/"/>
-    <id>https://yehanzhou.github.io/2016/12/08/es6-function/</id>
-    <published>2016-12-08T02:22:50.000Z</published>
-    <updated>2016-12-08T02:23:20.000Z</updated>
+    <title>从浏览器输入一个地址到渲染出网页的过程</title>
+    <link href="https://yehanzhou.github.io/2017/06/14/net-process/"/>
+    <id>https://yehanzhou.github.io/2017/06/14/net-process/</id>
+    <published>2017-06-14T13:40:40.000Z</published>
+    <updated>2017-06-14T13:42:22.000Z</updated>
+    
+    <content type="html"><![CDATA[<ol>
+<li><p><a href="http://abc.com:80/z/c?i=1#b" target="_blank" rel="external">http://abc.com:80/z/c?i=1#b</a><br>http协议 uri 端口号 路径 参数 片段</p>
+</li>
+<li><p>域名通过dns解析成ip</p>
+<ul>
+<li>首先查询浏览器缓存</li>
+<li>再查询系统缓存</li>
+<li>再递归查询dns服务器</li>
+</ul>
+</li>
+<li><p>建立tcp链接，三次握手</p>
+<ul>
+<li>syn-》</li>
+<li>《- syn/ack</li>
+<li>ack -》</li>
+</ul>
+</li>
+<li><p>http报文生成</p>
+<ul>
+<li>报文首部<ol>
+<li>请求行 PUT  example.html  HTTP1.1</li>
+<li>请求首部字段：Accept等</li>
+</ol>
+</li>
+<li>报文体</li>
+</ul>
+</li>
+<li>包装报文，经过链路层（mac），传输层（tcp），网络层（ip），应用层（http）</li>
+<li>服务器接收到HTTP请求</li>
+</ol>
+<p>服务器接收到数据之后，会经过链路层，网络层，传输层逐层将该层对应的首部信息去掉</p>
+<p>7． 服务器根据收到的HTTP数据，生成对应的响应报文,结构如下：</p>
+<p>  状态行：由HTTP 版本 状态码 原因短语构成<br>  响应首部字段 通用首部字段 实体首部字段 都可以查手册得知其具体内容以及含义这里不再展开</p>
+<ol>
+<li>客户端接收到了响应报文之后，浏览器渲染呈现<ol>
+<li>浏览器通常的主要组件分为以下几部分：<ul>
+<li>用户界面：如地址栏 书签菜单等等</li>
+<li>浏览器引擎：在用户界面和呈现引擎之间传送之类</li>
+<li>呈现引擎：负责显示请求的内容。例如HTMLhe CSS</li>
+<li>JAVAScript解释器：用于解释和执行JavaScript 代码</li>
+<li>数据存储</li>
+</ul>
+</li>
+<li>渲染文档主要使用呈现引擎。<br>过程如下：<ol>
+<li>呈现引擎从网络层获取请求文档的内容HTML文件，内容大小一般在8000个块以内。</li>
+<li>引擎解析HTML文档 将各个标记转化为内容树上的DOM节点 ，同时解析CSS文件 样式数据</li>
+<li>样式信息和 内容树共同构建成为 呈现树</li>
+<li>呈现树构建完毕以后，进入布局阶段， 为每一个节点分配一个应该出现在屏幕上的确切坐标</li>
+<li>呈现引擎遍历呈现树 由用户界面后端层将每个节点绘制出来。</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<ul>
+<li><a href="http://www.cnblogs.com/zhongweian/p/6159778.html" target="_blank" rel="external">参考链接1</a></li>
+<li><a href="https://segmentfault.com/q/1010000005086789" target="_blank" rel="external">参考链接2</a></li>
+</ul>
+]]></content>
     
     <summary type="html">
     
+      &lt;ol&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;http://abc.com:80/z/c?i=1#b&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://abc.com:80/z/c?i=1#b&lt;/a&gt;&lt;br&gt;http协议 uri 端口号 路径 参数 片段&lt;
+    
     </summary>
     
-      <category term="理解ECMAScript 6" scheme="https://yehanzhou.github.io/categories/%E7%90%86%E8%A7%A3ECMAScript-6/"/>
+    
+      <category term="http" scheme="https://yehanzhou.github.io/tags/http/"/>
+    
+      <category term="浏览器" scheme="https://yehanzhou.github.io/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>this的四种用法</title>
+    <link href="https://yehanzhou.github.io/2017/06/14/this/"/>
+    <id>https://yehanzhou.github.io/2017/06/14/this/</id>
+    <published>2017-06-14T13:36:52.000Z</published>
+    <updated>2017-06-14T13:41:52.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>在函数执行时，this 总是指向调用该函数的对象。</strong><br><strong>要判断 this 的指向，其实就是判断 this 所在的函数属于谁。</strong><br>在《javaScript语言精粹》这本书中，把 this出现的场景分为四类，简单的说就是：<br>有对象就指向调用对象,没调用对象就指向全局对象,用new构造就指向新对象，<br>通过 apply 或 call 或 bind 来改变 this 的所指。</p>
+<h2 id="1-函数有所属对象时：指向所属对象"><a href="#1-函数有所属对象时：指向所属对象" class="headerlink" title="1. 函数有所属对象时：指向所属对象"></a>1. 函数有所属对象时：指向所属对象</h2><p>函数有所属对象时，通常通过 . 表达式调用，这时 this自然指向所属对象。比如下面的例子：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> myObject = &#123;value: <span class="number">100</span>&#125;;</div><div class="line">myObject.getValue = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line"> <span class="built_in">console</span>.log(<span class="keyword">this</span>.value); <span class="comment">// 输出 100</span></div><div class="line"> <span class="built_in">console</span>.log(<span class="keyword">this</span>);<span class="comment">// 输出 &#123; value: 100, getValue: [Function] &#125;，</span></div><div class="line"> <span class="comment">// 其实就是 myObject 对象本身</span></div><div class="line"> <span class="keyword">return</span> <span class="keyword">this</span>.value;</div><div class="line">&#125;;</div><div class="line"><span class="built_in">console</span>.log(myObject.getValue()); <span class="comment">// =&gt; 100</span></div></pre></td></tr></table></figure></p>
+<p>getValue() 属于对象 myObject，并由 myOjbect 进行 . 调用，因此 this 指向对象 myObject。</p>
+<h2 id="2-函数没有所属对象：指向全局对象"><a href="#2-函数没有所属对象：指向全局对象" class="headerlink" title="2. 函数没有所属对象：指向全局对象"></a>2. 函数没有所属对象：指向全局对象</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> myObject = &#123;value: <span class="number">100</span>&#125;;</div><div class="line">myObject.getValue = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line"> <span class="keyword">var</span> foo = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>);<span class="comment">// 输出全局对象 global</span></div><div class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>.value) <span class="comment">// =&gt; undefined</span></div><div class="line"> &#125;;</div><div class="line"> foo();</div><div class="line"> <span class="keyword">return</span> <span class="keyword">this</span>.value;</div><div class="line">&#125;;</div><div class="line"><span class="built_in">console</span>.log(myObject.getValue()); <span class="comment">// =&gt; 100</span></div></pre></td></tr></table></figure>
+<p>在上述代码块中，foo 函数虽然定义在 getValue的函数体内，但实际上它既不属于 getValue 也不属于 myObject。foo 并没有被绑定在任何对象上，所以当调用时，它的 this 指针指向了全局对象 global。据说这是个设计错误。</p>
+<h2 id="3-构造器中的-this：指向新对象"><a href="#3-构造器中的-this：指向新对象" class="headerlink" title="3. 构造器中的 this：指向新对象"></a>3. 构造器中的 this：指向新对象</h2><p>js 中，我们通过 new 关键词来调用构造函数，此时 this会绑定在该新对象上。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> SomeClass = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line"> <span class="keyword">this</span>.value = <span class="number">100</span>;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> myCreate = <span class="keyword">new</span> SomeClass();</div><div class="line"><span class="built_in">console</span>.log(myCreate.value); <span class="comment">// 输出100</span></div></pre></td></tr></table></figure></p>
+<p>顺便说一句，在 js 中，构造函数、普通函数、对象方法、闭包，这四者没有明确界线。界线都在人的心中。</p>
+<h3 id="4-apply-和-call-调用以及-bind-绑定：指向绑定的对象"><a href="#4-apply-和-call-调用以及-bind-绑定：指向绑定的对象" class="headerlink" title="4. apply 和 call 调用以及 bind 绑定：指向绑定的对象"></a>4. apply 和 call 调用以及 bind 绑定：指向绑定的对象</h3><ul>
+<li>apply() 方法接受两个参数第一个是函数运行的作用域，另外一个是一个参数数组(arguments)。</li>
+<li>call() 方法第一个参数的意义与apply()方法相同，只是其他的参数需要一个个列举出来。<br>简单来说，call 的方式更接近我们平时调用函数，而 apply 需要我们传递 Array 形式的数组给它。它们是可以互相转换的。<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> myObject = &#123;value: <span class="number">100</span>&#125;;</div><div class="line"><span class="keyword">var</span> foo = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line"> <span class="built_in">console</span>.log(<span class="keyword">this</span>);</div><div class="line">&#125;;</div><div class="line">foo(); <span class="comment">// 全局变量 global</span></div><div class="line">foo.apply(myObject); <span class="comment">// &#123; value: 100 &#125;</span></div><div class="line">foo.call(myObject); <span class="comment">// &#123; value: 100 &#125;</span></div><div class="line"><span class="keyword">var</span> newFoo = foo.bind(myObject);</div><div class="line">newFoo(); <span class="comment">// &#123; value: 100 &#125;</span></div></pre></td></tr></table></figure></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;在函数执行时，this 总是指向调用该函数的对象。&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;要判断 this 的指向，其实就是判断 this 所在的函数属于谁。&lt;/strong&gt;&lt;br&gt;在《javaScript语言精粹》这本书中，把 this出现的场景分为四
+    
+    </summary>
     
     
-      <category term="ECMAScript 6" scheme="https://yehanzhou.github.io/tags/ECMAScript-6/"/>
+      <category term="js基础" scheme="https://yehanzhou.github.io/tags/js%E5%9F%BA%E7%A1%80/"/>
     
   </entry>
   

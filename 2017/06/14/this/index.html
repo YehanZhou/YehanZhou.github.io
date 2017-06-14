@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="js基础," />
 
 
 
@@ -86,12 +86,19 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Emily's blog">
-<meta property="og:url" content="https://yehanzhou.github.io/archives/2016/12/index.html">
+<meta name="description" content="在函数执行时，this 总是指向调用该函数的对象。要判断 this 的指向，其实就是判断 this 所在的函数属于谁。在《javaScript语言精粹》这本书中，把 this出现的场景分为四类，简单的说就是：有对象就指向调用对象,没调用对象就指向全局对象,用new构造就指向新对象，通过 apply 或 call 或 bind 来改变 this 的所指。
+1. 函数有所属对象时：指向所属对象函数有所">
+<meta property="og:type" content="article">
+<meta property="og:title" content="this的四种用法">
+<meta property="og:url" content="https://yehanzhou.github.io/2017/06/14/this/index.html">
 <meta property="og:site_name" content="Emily's blog">
+<meta property="og:description" content="在函数执行时，this 总是指向调用该函数的对象。要判断 this 的指向，其实就是判断 this 所在的函数属于谁。在《javaScript语言精粹》这本书中，把 this出现的场景分为四类，简单的说就是：有对象就指向调用对象,没调用对象就指向全局对象,用new构造就指向新对象，通过 apply 或 call 或 bind 来改变 this 的所指。
+1. 函数有所属对象时：指向所属对象函数有所">
+<meta property="og:updated_time" content="2017-06-14T13:41:52.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Emily's blog">
+<meta name="twitter:title" content="this的四种用法">
+<meta name="twitter:description" content="在函数执行时，this 总是指向调用该函数的对象。要判断 this 的指向，其实就是判断 this 所在的函数属于谁。在《javaScript语言精粹》这本书中，把 this出现的场景分为四类，简单的说就是：有对象就指向调用对象,没调用对象就指向全局对象,用new构造就指向新对象，通过 apply 或 call 或 bind 来改变 this 的所指。
+1. 函数有所属对象时：指向所属对象函数有所">
 
 
 
@@ -119,13 +126,13 @@
 
 
 
-  <link rel="canonical" href="https://yehanzhou.github.io/archives/2016/12/"/>
+  <link rel="canonical" href="https://yehanzhou.github.io/2017/06/14/this/"/>
 
 
 
 
 
-  <title> 归档 | Emily's blog </title>
+  <title> this的四种用法 | Emily's blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -156,7 +163,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  page-archive  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -279,66 +286,168 @@
           <div id="content" class="content">
             
 
-  <section id="posts" class="posts-collapse">
-    <span class="archive-move-on"></span>
-
-    <span class="archive-page-counter">
-      
-      
-      
-        
-      
-      嗯..! 目前共计 7 篇日志。 继续努力。
-    </span>
-
+  <div id="posts" class="posts-expand">
     
 
-      
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://yehanzhou.github.io/2017/06/14/this/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Emily Zhou">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/head.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Emily's blog">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Emily's blog" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                this的四种用法
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-14T21:36:52+08:00">
+                2017-06-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <a href="/2017/06/14/this/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/06/14/this/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
       
       
 
       
+        <p><strong>在函数执行时，this 总是指向调用该函数的对象。</strong><br><strong>要判断 this 的指向，其实就是判断 this 所在的函数属于谁。</strong><br>在《javaScript语言精粹》这本书中，把 this出现的场景分为四类，简单的说就是：<br>有对象就指向调用对象,没调用对象就指向全局对象,用new构造就指向新对象，<br>通过 apply 或 call 或 bind 来改变 this 的所指。</p>
+<h2 id="1-函数有所属对象时：指向所属对象"><a href="#1-函数有所属对象时：指向所属对象" class="headerlink" title="1. 函数有所属对象时：指向所属对象"></a>1. 函数有所属对象时：指向所属对象</h2><p>函数有所属对象时，通常通过 . 表达式调用，这时 this自然指向所属对象。比如下面的例子：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> myObject = &#123;value: <span class="number">100</span>&#125;;</div><div class="line">myObject.getValue = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line"> <span class="built_in">console</span>.log(<span class="keyword">this</span>.value); <span class="comment">// 输出 100</span></div><div class="line"> <span class="built_in">console</span>.log(<span class="keyword">this</span>);<span class="comment">// 输出 &#123; value: 100, getValue: [Function] &#125;，</span></div><div class="line"> <span class="comment">// 其实就是 myObject 对象本身</span></div><div class="line"> <span class="keyword">return</span> <span class="keyword">this</span>.value;</div><div class="line">&#125;;</div><div class="line"><span class="built_in">console</span>.log(myObject.getValue()); <span class="comment">// =&gt; 100</span></div></pre></td></tr></table></figure></p>
+<p>getValue() 属于对象 myObject，并由 myOjbect 进行 . 调用，因此 this 指向对象 myObject。</p>
+<h2 id="2-函数没有所属对象：指向全局对象"><a href="#2-函数没有所属对象：指向全局对象" class="headerlink" title="2. 函数没有所属对象：指向全局对象"></a>2. 函数没有所属对象：指向全局对象</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> myObject = &#123;value: <span class="number">100</span>&#125;;</div><div class="line">myObject.getValue = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line"> <span class="keyword">var</span> foo = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>);<span class="comment">// 输出全局对象 global</span></div><div class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>.value) <span class="comment">// =&gt; undefined</span></div><div class="line"> &#125;;</div><div class="line"> foo();</div><div class="line"> <span class="keyword">return</span> <span class="keyword">this</span>.value;</div><div class="line">&#125;;</div><div class="line"><span class="built_in">console</span>.log(myObject.getValue()); <span class="comment">// =&gt; 100</span></div></pre></td></tr></table></figure>
+<p>在上述代码块中，foo 函数虽然定义在 getValue的函数体内，但实际上它既不属于 getValue 也不属于 myObject。foo 并没有被绑定在任何对象上，所以当调用时，它的 this 指针指向了全局对象 global。据说这是个设计错误。</p>
+<h2 id="3-构造器中的-this：指向新对象"><a href="#3-构造器中的-this：指向新对象" class="headerlink" title="3. 构造器中的 this：指向新对象"></a>3. 构造器中的 this：指向新对象</h2><p>js 中，我们通过 new 关键词来调用构造函数，此时 this会绑定在该新对象上。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> SomeClass = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line"> <span class="keyword">this</span>.value = <span class="number">100</span>;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> myCreate = <span class="keyword">new</span> SomeClass();</div><div class="line"><span class="built_in">console</span>.log(myCreate.value); <span class="comment">// 输出100</span></div></pre></td></tr></table></figure></p>
+<p>顺便说一句，在 js 中，构造函数、普通函数、对象方法、闭包，这四者没有明确界线。界线都在人的心中。</p>
+<h3 id="4-apply-和-call-调用以及-bind-绑定：指向绑定的对象"><a href="#4-apply-和-call-调用以及-bind-绑定：指向绑定的对象" class="headerlink" title="4. apply 和 call 调用以及 bind 绑定：指向绑定的对象"></a>4. apply 和 call 调用以及 bind 绑定：指向绑定的对象</h3><ul>
+<li>apply() 方法接受两个参数第一个是函数运行的作用域，另外一个是一个参数数组(arguments)。</li>
+<li>call() 方法第一个参数的意义与apply()方法相同，只是其他的参数需要一个个列举出来。<br>简单来说，call 的方式更接近我们平时调用函数，而 apply 需要我们传递 Array 形式的数组给它。它们是可以互相转换的。<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> myObject = &#123;value: <span class="number">100</span>&#125;;</div><div class="line"><span class="keyword">var</span> foo = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line"> <span class="built_in">console</span>.log(<span class="keyword">this</span>);</div><div class="line">&#125;;</div><div class="line">foo(); <span class="comment">// 全局变量 global</span></div><div class="line">foo.apply(myObject); <span class="comment">// &#123; value: 100 &#125;</span></div><div class="line">foo.call(myObject); <span class="comment">// &#123; value: 100 &#125;</span></div><div class="line"><span class="keyword">var</span> newFoo = foo.bind(myObject);</div><div class="line">newFoo(); <span class="comment">// &#123; value: 100 &#125;</span></div></pre></td></tr></table></figure></li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
         
-        <div class="collection-title">
-          <h2 class="archive-year motion-element" id="archive-year-2016">2016</h2>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/js基础/" rel="tag"># js基础</a>
+          
         </div>
       
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/12/06/destructuring/" rel="next" title="ECMAScript 6 变量解构赋值">
+                <i class="fa fa-chevron-left"></i> ECMAScript 6 变量解构赋值
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/06/14/net-process/" rel="prev" title="从浏览器输入一个地址到渲染出网页的过程">
+                从浏览器输入一个地址到渲染出网页的过程 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
       
 
       
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/12/06/destructuring/" itemprop="url">
-              
-                <span itemprop="name">ECMAScript 6 变量解构赋值</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-12-06T11:17:21+08:00"
-              content="2016-12-06" >
-          12-06
-        </time>
-      </div>
-
-    </header>
+      
+    </footer>
   </article>
 
 
 
-    
-
-  </section>
-
-  
-
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -346,6 +455,14 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2017/06/14/this/"
+           data-title="this的四种用法" data-url="https://yehanzhou.github.io/2017/06/14/this/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -365,8 +482,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/head.jpg"
@@ -446,6 +572,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-函数有所属对象时：指向所属对象"><span class="nav-number">1.</span> <span class="nav-text">1. 函数有所属对象时：指向所属对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-函数没有所属对象：指向全局对象"><span class="nav-number">2.</span> <span class="nav-text">2. 函数没有所属对象：指向全局对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-构造器中的-this：指向新对象"><span class="nav-number">3.</span> <span class="nav-text">3. 构造器中的 this：指向新对象</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-apply-和-call-调用以及-bind-绑定：指向绑定的对象"><span class="nav-number">3.1.</span> <span class="nav-text">4. apply 和 call 调用以及 bind 绑定：指向绑定的对象</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
     </div>
@@ -551,11 +693,9 @@
 
 
   
-  
-    <script type="text/javascript" id="motion.page.archive">
-      $('.archive-year').velocity('transition.slideLeftIn');
-    </script>
-  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
 
 
   
